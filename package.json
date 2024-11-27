@@ -1,0 +1,30 @@
+{
+  "name": "loggingmiddleware",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
+    "build": "concurrently \"rimraf build\" \"npx tsc\"",
+    "prestart": "npm run build",
+    "start": "node build/server.js",
+    "predev": "npm run build",
+    "dev": "concurrently \"npx tsc -w\" \"nodemon build/server.js\""
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "concurrently": "^9.1.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "mongoose": "^8.8.3",
+    "typescript": "^5.7.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.0",
+    "nodemon": "^3.1.7",
+    "rimraf": "^6.0.1"
+  }
+}
